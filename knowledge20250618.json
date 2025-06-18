@@ -1,0 +1,412 @@
+{
+  "catBehaviorKnowledgeBase": {
+    "schema_version": "1.8",
+    "last_updated": "2025-06-18",
+    "welfarePrinciples": {
+        "title_en": "Core Feline Welfare Principles",
+        "title_zh_tw": "核心貓咪福祉原則",
+        "introduction_en": "Understanding these principles is fundamental to interpreting feline behavior. They provide the 'why' behind a cat's needs and a caregiver's actions.",
+        "introduction_zh_tw": "理解這些原則是詮釋貓咪行為的基礎。它們為貓咪的需求和飼主的行為提供了「為什麼」的解答。",
+        "five_freedoms": {
+            "title_en": "The Five Freedoms",
+            "title_zh_tw": "五大自由",
+            "description_en": "An internationally accepted standard for animal welfare.",
+            "description_zh_tw": "國際公認的動物福祉標準。",
+            "freedoms": [
+                {"name_en": "Freedom from Hunger and Thirst", "name_zh_tw": "免於飢渴的自由"},
+                {"name_en": "Freedom from Discomfort", "name_zh_tw": "免於不適的自由"},
+                {"name_en": "Freedom from Pain, Injury, or Disease", "name_zh_tw": "免於痛苦、傷害或疾病的自由"},
+                {"name_en": "Freedom to Express Normal Behavior", "name_zh_tw": "表達天性行為的自由"},
+                {"name_en": "Freedom from Fear and Distress", "name_zh_tw": "免於恐懼和痛苦的自由"}
+            ],
+            "source_citations": [8]
+        },
+        "principle_of_agency": {
+            "title_en": "Principle of Agency (The Power of Choice)",
+            "title_zh_tw": "自主權原則（選擇的力量）",
+            "description_en": "A cat that feels it has control over its environment is less stressed and more confident. Providing choices is a cornerstone of advanced welfare.",
+            "description_zh_tw": "一隻感覺能控制自己環境的貓，其壓力會更小，也更有自信。提供選擇是高級動物福祉的基石。",
+            "examples_en": ["Multiple food/water stations", "Several litter boxes", "Various high and low resting spots", "The option to engage or disengage from interaction"],
+            "examples_zh_tw": ["提供多個食物/水碗站點", "提供數個貓砂盆", "提供多樣的高處和低處休息點", "提供互動或不互動的選擇權"]
+        }
+    },
+    "environmentalDesign": {
+        "title_en": "Feline-Friendly Environmental Design",
+        "title_zh_tw": "貓咪友善的環境設計",
+        "introduction_en": "Proactively designing a cat's space to meet its instinctual needs can prevent many common behavioral problems.",
+        "introduction_zh_tw": "主動設計一個能滿足貓咪本能需求的空間，可以預防許多常見的行為問題。",
+        "vertical_space": {
+            "title_en": "Cat Superhighways (Vertical Space)",
+            "title_zh_tw": "貓咪高速公路（垂直空間）",
+            "concept_en": "Cats are climbers. Vertical space increases their territory, provides security, and allows them to avoid perceived threats on the ground (like dogs or other cats).",
+            "concept_zh_tw": "貓是攀爬動物。垂直空間能擴大牠們的領地，提供安全感，並讓牠們避開地面上的潛在威脅（如狗或其他貓）。",
+            "implementation_en": ["Use cat trees, wall-mounted shelves, and clear tops of sturdy furniture to create pathways.", "Ensure stable and safe surfaces.", "Crucial for multi-cat households to reduce conflict."],
+            "implementation_zh_tw": ["利用貓跳台、牆上層板、穩固家具的頂部來創造通道。", "確保表面穩固安全。", "對於多貓家庭，這對減少衝突至關重要。"],
+            "source_citations": [7, 10, 442]
+        },
+        "resource_distribution": {
+            "title_en": "Resource Mapping",
+            "title_zh_tw": "資源佈局",
+            "concept_en": "Strategic placement of key resources (food, water, litter boxes, scratching posts) to prevent competition and stress.",
+            "concept_zh_tw": "策略性地放置關鍵資源（食物、水、貓砂盆、貓抓板），以預防競爭和壓力。",
+            "rule_of_thumb_en": "In a multi-cat home, the rule is N+1, where N is the number of cats. For example, 2 cats should have at least 3 litter boxes in different locations.",
+            "rule_of_thumb_zh_tw": "在多貓家庭中，遵循 N+1 原則，N是貓的數量。例如，2隻貓應至少有3個位於不同地點的貓砂盆。",
+            "implementation_en": ["Do not place food and water right next to the litter box.", "Spread resources throughout the house to prevent one cat from guarding them all."],
+            "implementation_zh_tw": ["不要將食物和水碗放在貓砂盆旁邊。", "將資源分散佈置在家中各處，防止一隻貓獨佔所有資源。"],
+            "source_citations": [10, 16]
+        }
+    },
+    "behaviors": [
+      {
+        "behavior_id": "VOC_001",
+        "category": "Vocalization",
+        "behavior_name_en": "Purring",
+        "behavior_name_zh_tw": "發出咕嚕聲",
+        "description_en": "A continuous, soft, vibrating sound produced in the cat's throat.",
+        "description_zh_tw": "從貓的喉嚨發出的連續、輕柔的振動聲。",
+        "interpretations": [
+          {
+            "interpretation_id": "VOC_001_P01",
+            "meaning_en": "Contentment, relaxation, happiness.",
+            "meaning_zh_tw": "滿足、放鬆、愉快。",
+            "context_en": "When being petted, resting in a comfortable spot, nursing, or greeting a familiar person.",
+            "context_zh_tw": "被撫摸時、在舒適的地方休息時、哺乳時、或向熟悉的人打招呼時。",
+            "context_tags": ["petting", "resting", "nursing", "greeting", "familiar_person"],
+            "emotion_tags": ["content", "happy", "relaxed", "affectionate"],
+            "confidence": 0.9,
+            "source_citations": [8, 314, 417, 99]
+          },
+          {
+            "interpretation_id": "VOC_001_P02",
+            "meaning_en": "Self-soothing when in pain, stressed, or frightened.",
+            "meaning_zh_tw": "在疼痛、壓力大或恐懼時用以自我安撫。",
+            "context_en": "When injured, at the veterinarian's office, during parturition (giving birth). The low-frequency vibration is believed to have healing properties.",
+            "context_zh_tw": "受傷時、在獸醫院時、分娩時。這種低頻振動被認為具有療癒效果。",
+            "context_tags": ["injury", "veterinary_visit", "parturition", "stressful_environment"],
+            "emotion_tags": ["pain", "stressed", "anxious", "fearful"],
+            "confidence": 0.7,
+            "source_citations": [8, 367, 417]
+          }
+        ],
+        "variations": {},
+        "empirical_data": []
+      },
+      {
+        "behavior_id": "VOC_004",
+        "category": "Vocalization",
+        "behavior_name_en": "Drawn-out Meow / Yowl",
+        "behavior_name_zh_tw": "拉長的「喵—」或嚎叫",
+        "description_en": "A long, insistent 'meeeeoooww' sound, can be loud and repetitive.",
+        "description_zh_tw": "一種長而持續的「喵—嗷—」聲，可能響亮且重複。",
+        "interpretations": [
+          {
+            "interpretation_id": "VOC_004_P01",
+            "meaning_en": "Making a specific demand.",
+            "meaning_zh_tw": "提出特定要求。",
+            "context_en": "The cat wants something specific: food, water, to be let out of a room, or attention. The sound is directed at a human to provoke an action.",
+            "context_zh_tw": "貓想要某個特定的東西：食物、水、想從房間出去、或需要關注。這種叫聲是針對人發出的，意圖促使對方行動。",
+            "context_tags": ["requesting_food", "requesting_access", "soliciting_attention", "human_interaction"],
+            "emotion_tags": ["demanding", "insistent", "worried"],
+            "confidence": 0.9,
+            "source_citations": [397, 403],
+            "ethology_notes": {
+              "learning_type": "Operant Conditioning",
+              "note_en": "The cat learns that this specific vocalization results in the owner providing a resource, thus reinforcing the behavior.",
+              "note_zh_tw": "貓學習到這種特定的叫聲會讓飼主提供資源，從而強化了這個行為。"
+            },
+            "management_strategies": [
+                {
+                    "strategy_en": "Identify the need. If it's feeding time, feed the cat. If it wants to get out, open the door. Fulfilling the request can build trust.",
+                    "strategy_zh_tw": "識別需求。如果是餵食時間，就餵食。如果想出門，就開門。滿足請求有助於建立信任。"
+                },
+                {
+                    "strategy_en": "If the demand is inappropriate (e.g., begging for treats constantly), do not reward the yowling. Wait for a moment of quiet before giving attention or treats to avoid reinforcing the demanding behavior.",
+                    "strategy_zh_tw": "如果要求不當（如持續討零食），不要獎勵嚎叫行為。等到牠安靜下來再給予關注或零食，避免強化這種要求行為。"
+                }
+            ]
+          },
+          {
+            "interpretation_id": "VOC_004_P02",
+            "meaning_en": "Medical Distress.",
+            "meaning_zh_tw": "醫療相關的痛苦。",
+            "context_en": "An uncharacteristic, persistent yowling, especially in older cats.",
+            "context_zh_tw": "不尋常且持續的嚎叫，尤其是在老貓身上。",
+            "context_tags": ["distress_call", "medical_symptom", "aging_cat"],
+            "emotion_tags": ["distressed", "in_pain", "confused"],
+            "confidence": 0.7,
+            "source_citations": [26, 40],
+            "pathology_links": {
+              "possible_conditions_en": ["Cognitive Dysfunction Syndrome (CDS)", "Hyperthyroidism", "Hypertension", "Deafness", "Chronic Pain"],
+              "possible_conditions_zh_tw": ["認知功能障礙症候群(CDS)", "甲狀腺功能亢進", "高血壓", "耳聾", "慢性疼痛"],
+              "specific_indicators_en": ["Disorientation", "Aimless wandering at night", "Increased appetite with weight loss", "Changes in sleep cycle"],
+              "specific_indicators_zh_tw": ["迷失方向", "夜間無目的遊蕩", "食慾增加但體重減輕", "睡眠週期改變"]
+            },
+            "management_strategies": [
+                {
+                    "strategy_en": "Consult a veterinarian immediately, especially if the behavior is new and persistent in a senior cat. Do not dismiss it as 'just old age'.",
+                    "strategy_zh_tw": "立即諮詢獸醫，特別是如果這是老貓新出現的持續行為。不要僅僅當作是「年紀大了」而忽視。"
+                }
+            ]
+          }
+        ],
+        "variations": {},
+        "empirical_data": []
+      },
+      {
+        "behavior_id": "ACT_002",
+        "category": "Action",
+        "behavior_name_en": "Inappropriate Elimination / House Soiling",
+        "behavior_name_zh_tw": "不當排泄／隨地大小便",
+        "description_en": "Urinating or defecating outside of the designated litter box.",
+        "description_zh_tw": "在貓砂盆以外的地方排尿或排便。",
+        "interpretations": [
+          {
+            "interpretation_id": "ACT_002_P01",
+            "meaning_en": "Medical Issue.",
+            "meaning_zh_tw": "醫療問題。",
+            "context_en": "Pain or increased frequency of urination/defecation. This should ALWAYS be the first consideration and a vet visit is recommended.",
+            "context_zh_tw": "排泄時疼痛或頻率增加。這永遠應該是首要考量，建議立即就醫。",
+            "context_tags": ["medical_symptom"],
+            "emotion_tags": ["pain", "discomfort", "sick"],
+            "confidence": 0.95,
+            "source_citations": [35, 66, 223],
+            "pathology_links": {
+              "possible_conditions_en": ["Feline Lower Urinary Tract Disease (FLUTD)", "Urinary Tract Infection (UTI)", "Bladder Stones (Urolithiasis)", "Kidney Disease", "Diabetes Mellitus", "Arthritis"],
+              "possible_conditions_zh_tw": ["貓下泌尿道疾病(FLUTD)", "泌尿道感染(UTI)", "膀胱結石", "腎臟病", "糖尿病", "關節炎"],
+              "specific_indicators_en": ["Straining to urinate", "Frequent small urination", "Blood in urine (hematuria)", "Crying out while urinating", "Reluctance to jump (arthritis making it hard to get into box)"],
+              "specific_indicators_zh_tw": ["排尿困難", "頻尿但量少", "血尿", "排尿時嚎叫", "不願跳躍（因關節炎導致進出貓砂盆困難）"]
+            }
+          },
+          {
+            "interpretation_id": "ACT_002_P02",
+            "meaning_en": "Behavioral Issue: Stress or Anxiety.",
+            "meaning_zh_tw": "行為問題：壓力或焦慮。",
+            "context_en": "A response to environmental or social stressors. Cats may eliminate on items with the owner's scent (like beds or clothes) to self-soothe by mixing their scent with the owner's.",
+            "context_zh_tw": "對環境或社交壓力源的反應。貓可能會在帶有飼主氣味的物品（如床或衣物）上排泄，試圖透過混合氣味來自我安撫。",
+            "context_tags": ["environmental_change", "new_pet_present", "new_baby", "owner_absent", "inter_cat_conflict"],
+            "emotion_tags": ["stressed", "anxious", "fearful", "insecure"],
+            "confidence": 0.85,
+            "source_citations": [7, 37, 223]
+          }
+        ],
+        "variations": {},
+        "empirical_data": []
+      },
+      {
+        "behavior_id": "SI_002",
+        "category": "Social Interaction",
+        "behavior_name_en": "Aggression Towards Humans",
+        "behavior_name_zh_tw": "對人攻擊",
+        "description_en": "Biting, scratching, or lunging at a person.",
+        "description_zh_tw": "對人咬、抓或猛撲。",
+        "interpretations": [
+          {
+            "interpretation_id": "SI_002_P01",
+            "meaning_en": "Pain-induced Aggression.",
+            "meaning_zh_tw": "疼痛引發的攻擊。",
+            "context_en": "The cat lashes out when a painful area is touched, or in anticipation of being touched. Often sudden and uncharacteristic for the cat.",
+            "context_zh_tw": "當疼痛部位被觸碰，或預期將被觸碰時，貓會發動攻擊。通常是突然且不符合貓咪一貫的性格。",
+            "context_tags": ["human_interaction", "petting", "being_handled", "medical_symptom"],
+            "emotion_tags": ["pain", "defensive", "fearful"],
+            "confidence": 0.9,
+            "source_citations": [35, 122],
+            "pathology_links": {
+              "possible_conditions_en": ["Arthritis", "Dental Disease", "Abscess/Wound", "Internal Pain"],
+              "possible_conditions_zh_tw": ["關節炎", "牙科疾病", "膿瘡/傷口", "內臟疼痛"],
+              "specific_indicators_en": ["Aggression localized to touch (e.g., only when petting back)", "Reluctance to be picked up", "Hiding more"],
+              "specific_indicators_zh_tw": ["觸摸特定部位時攻擊（例如只在摸背時）", "不願被抱起", "更頻繁地躲藏"]
+            }
+          },
+          {
+            "interpretation_id": "SI_002_P02",
+            "meaning_en": "Fear-induced / Defensive Aggression.",
+            "meaning_zh_tw": "恐懼性／防禦性攻擊。",
+            "context_en": "The cat feels threatened and cornered, with no perceived escape route. The aggression is a last resort to create distance.",
+            "context_zh_tw": "貓感到受威脅且被逼到角落，認為沒有逃脫路線。攻擊是為了拉開距離的最後手段。",
+            "context_tags": ["cornered", "stranger_present", "loud_noise", "threatening_human_posture"],
+            "emotion_tags": ["fearful", "defensive", "threatened"],
+            "confidence": 0.85,
+            "source_citations": [35, 122],
+            "ethology_notes": {
+              "precursor_signals": ["Body freezes", "Ears flatten ('airplane ears')", "Pupils dilate", "Low growl or hiss"],
+              "note_en": "Aggression is the final step in a stress escalation sequence. Recognizing precursors is key.",
+              "note_zh_tw": "攻擊是壓力升級序列的最後一步。識別前兆信號是關鍵。"
+            }
+          },
+          {
+            "interpretation_id": "SI_002_P03",
+            "meaning_en": "Petting-induced Aggression (Overstimulation).",
+            "meaning_zh_tw": "撫摸引發的攻擊（過度刺激）。",
+            "context_en": "The cat suddenly bites or scratches during a petting session it seemed to be enjoying. The repetitive stroking becomes overwhelming.",
+            "context_zh_tw": "貓在看似享受的撫摸過程中突然咬人或抓人。重複的撫摸變得讓牠無法承受。",
+            "context_tags": ["petting", "human_interaction"],
+            "emotion_tags": ["overstimulated", "annoyed", "warning"],
+            "confidence": 0.9,
+            "source_citations": [394, 124],
+             "ethology_notes": {
+              "precursor_signals": ["Skin twitching", "Tail thrashing", "Stopping purring", "Slightly flattened ears", "Turning head towards hand"],
+              "note_en": "A common misinterpretation by owners. The cat gives subtle signals before the bite.",
+              "note_zh_tw": "這是飼主常見的誤解。貓在咬人前會發出細微的信號。"
+            }
+          }
+        ],
+        "variations": {},
+        "empirical_data": []
+      },
+      {
+        "behavior_id": "ACT_009",
+        "category": "Human-Cat Interaction",
+        "behavior_name_en": "Bringing 'Gifts' (Prey)",
+        "behavior_name_zh_tw": "帶回「禮物」（獵物）",
+        "description_en": "The cat brings dead or injured prey (insects, rodents, birds) to the owner.",
+        "description_zh_tw": "貓帶回死的或受傷的獵物（昆蟲、老鼠、鳥）給飼主。",
+        "interpretations": [
+            {
+                "interpretation_id": "ACT_009_P01",
+                "meaning_en": "Teaching / Maternal Provisioning.",
+                "meaning_zh_tw": "教導／母性供給。",
+                "context_en": "The cat perceives its owner as a member of its social group who is an unskilled hunter. It's bringing food back to the 'den' to teach or provide for its 'family'.",
+                "context_zh_tw": "貓將飼主視為其社交群體中一個不會打獵的成員。牠將食物帶回「巢穴」是為了教導或供給其「家人」。",
+                "context_tags": ["human_interaction", "prey_present"],
+                "emotion_tags": ["caring", "instinctual", "teaching"],
+                "confidence": 0.8,
+                "source_citations": [424],
+                "ethology_notes": {
+                    "note_en": "This is a deeply instinctual behavior seen in mother cats teaching their kittens to hunt. The owner is often viewed as a 'big, clumsy kitten'.",
+                    "note_zh_tw": "這是母貓教導幼貓狩獵時的深度本能行為。飼主常被貓視為「笨拙的大貓咪」。"
+                },
+                "management_strategies": [
+                    {
+                        "strategy_en": "React calmly and praise the cat for the gesture (the hunting effort), even if the 'gift' is unpleasant. This acknowledges the bond.",
+                        "strategy_zh_tw": "冷靜地反應並稱讚這個舉動（狩獵的成果），即使「禮物」讓人不悅。這是對牠們之間連結的肯定。"
+                    },
+                    {
+                        "strategy_en": "Distract the cat with a toy or treat, then discreetly dispose of the prey when the cat is not looking to avoid causing confusion or offense.",
+                        "strategy_zh_tw": "用玩具或零食分散貓的注意力，然後在牠不注意時悄悄處理掉獵物，以避免引起困惑或冒犯。"
+                    }
+                ]
+            }
+        ],
+        "variations": {},
+        "empirical_data": []
+      },
+      {
+        "behavior_id": "ACT_010",
+        "category": "Action",
+        "sub_category": "Destructive Behavior",
+        "behavior_name_en": "Destructive Scratching",
+        "behavior_name_zh_tw": "破壞性抓撓",
+        "description_en": "Scratching on inappropriate surfaces like furniture, carpets, or door frames.",
+        "description_zh_tw": "在不當的表面（如家具、地毯或門框）上抓撓。",
+        "interpretations": [
+          {
+            "interpretation_id": "ACT_010_P01",
+            "meaning_en": "Normal maintenance and marking behavior in an inappropriate location.",
+            "meaning_zh_tw": "在不適當的地點進行正常的維護與標記行為。",
+            "context_en": "Scratching is a natural and necessary cat behavior for claw maintenance, stretching, and territorial scent marking (glands in paws). If appropriate outlets are not provided, they will use what is available.",
+            "context_zh_tw": "抓撓是貓維持爪子健康、伸展身體和標記地盤（透過腳掌的腺體）的自然且必要的行為。如果沒有提供合適的出口，牠們就會使用現有的東西。",
+            "context_tags": ["inappropriate_object", "territorial_marking"],
+            "emotion_tags": ["neutral", "instinctual", "territorial"],
+            "confidence": 0.9,
+            "source_citations": [8, 10, 430],
+            "management_strategies": [
+                {
+                    "strategy_en": "Provide multiple, attractive scratching posts/surfaces (vertical, horizontal, angled; sisal rope, cardboard). Place them in prominent locations, especially near sleeping areas or scratched furniture.",
+                    "strategy_zh_tw": "提供多個有吸引力的貓抓板/面（垂直、水平、傾斜；劍麻繩、紙板材質）。將它們放置在顯眼位置，特別是睡覺區域或已被抓壞的家具附近。"
+                },
+                {
+                    "strategy_en": "Make the inappropriate surfaces unattractive. Use double-sided sticky tape, aluminum foil, or citrus-scented sprays.",
+                    "strategy_zh_tw": "讓不適當的表面變得沒有吸引力。使用雙面膠、鋁箔紙或柑橘味的噴霧。"
+                },
+                {
+                    "strategy_en": "Keep claws trimmed regularly. Reward the cat with praise or treats when it uses the correct scratching post.",
+                    "strategy_zh_tw": "定期修剪指甲。當貓使用正確的貓抓板時，用讚美或零食獎勵牠。"
+                }
+            ]
+          }
+        ],
+        "variations": {},
+        "empirical_data": []
+      },
+      {
+        "behavior_id": "ACT_011",
+        "category": "Action",
+        "behavior_name_en": "Reduced Vertical Movement",
+        "behavior_name_zh_tw": "垂直活動減少",
+        "description_en": "Hesitation or unwillingness to jump up onto or down from high places like counters, cat trees, or beds.",
+        "description_zh_tw": "對於跳上或跳下如檯面、貓跳台或床等高處，表現出猶豫或不情願。",
+        "interpretations": [
+          {
+            "interpretation_id": "ACT_011_P01",
+            "meaning_en": "Early sign of pain, especially arthritis.",
+            "meaning_zh_tw": "疼痛的早期跡象，特別是關節炎。",
+            "context_en": "This is one of the most common and subtle signs of osteoarthritis in cats, which is highly under-diagnosed. The cat avoids movements that cause joint pain.",
+            "context_zh_tw": "這是貓骨關節炎最常見也最細微的跡象之一，且極易被忽略。貓會避開會引起關節疼痛的動作。",
+            "context_tags": ["aging_cat", "medical_symptom"],
+            "emotion_tags": ["pain", "hesitant"],
+            "confidence": 0.9,
+            "source_citations": [16, 223],
+            "predictive_health_indicators": {
+              "indicator_en": "A gradual decrease in the frequency of jumping over several months is a strong predictor for developing clinical arthritis. Tracking this trend allows for early intervention.",
+              "indicator_zh_tw": "數月內跳躍頻率的逐漸下降，是發展為臨床關節炎的有力預測指標。追蹤此趨勢有助於及早介入。"
+            },
+            "pathology_links": {
+              "possible_conditions_en": ["Osteoarthritis", "Hip Dysplasia", "Injury to limbs or spine"],
+              "possible_conditions_zh_tw": ["骨關節炎", "髖關節發育不良", "四肢或脊椎受傷"]
+            },
+            "management_strategies": [
+                {
+                    "strategy_en": "Consult a veterinarian to get a pain assessment and diagnosis. Do not assume it's just 'slowing down with age'.",
+                    "strategy_zh_tw": "諮詢獸醫進行疼痛評估和診斷。不要想當然地認為只是「年紀大了動作慢」。"
+                },
+                {
+                    "strategy_en": "Provide ramps or pet stairs to help the cat access favorite high spots without painful jumping. This maintains their quality of life and sense of agency.",
+                    "strategy_zh_tw": "提供坡道或寵物階梯，幫助貓在無需痛苦跳躍的情況下到達喜歡的高處。這能維持牠們的生活品質與自主感。"
+                }
+            ]
+          }
+        ],
+        "variations": {},
+        "empirical_data": []
+      }
+    ],
+    "lifeCycleEvents": [
+      {
+        "event_id": "LCE_001",
+        "event_name_en": "Introducing a New Cat",
+        "event_name_zh_tw": "介紹新貓回家",
+        "description_en": "The process of safely and successfully introducing a new cat to a resident cat.",
+        "description_zh_tw": "安全且成功地將一隻新貓介紹給家中原有貓咪的過程。",
+        "proactive_welfare_notes": [
+          {
+            "note_en": "Cats are territorial. A slow, gradual introduction is crucial to prevent conflict and foster a positive long-term relationship. Never force an interaction.",
+            "note_zh_tw": "貓是地域性很強的動物。緩慢、漸進的介紹過程對於防止衝突、培養長期的正面關係至關重要。絕不要強迫互動。"
+          }
+        ],
+        "management_strategies": [
+          {
+            "step": 1,
+            "strategy_en": "Separation & Sanctuary: Initially, keep the new cat in a separate, secure room with its own litter box, food, water, and toys. This allows it to acclimate without feeling threatened.",
+            "strategy_zh_tw": "隔離與建立安全區：一開始，將新貓安置在一個獨立的安全房間裡，配有自己的貓砂盆、食物、水和玩具。這讓牠能在不受威脅的情況下適應新環境。"
+          },
+          {
+            "step": 2,
+            "strategy_en": "Scent Swapping: Exchange bedding or toys between the cats so they can get used to each other's scent before meeting face-to-face. This helps create a 'group scent'.",
+            "strategy_zh_tw": "氣味交換：交換貓咪的寢具或玩具，讓牠們在見面前先熟悉對方的氣味。這有助於創造「群體氣味」。"
+          },
+          {
+            "step": 3,
+            "strategy_en": "Visual Contact (No Physical Contact): After a few days, allow them to see each other through a baby gate or a slightly cracked door. Feed them on opposite sides of the barrier to create a positive association.",
+            "strategy_zh_tw": "視覺接觸（無物理接觸）：幾天後，讓牠們透過嬰兒門或微開的門縫看到彼此。在屏障的兩側餵食，以建立正向連結。"
+          },
+          {
+            "step": 4,
+            "strategy_en": "Supervised Introduction: Allow short, supervised interactions in a neutral territory. Use toys to distract them and keep the atmosphere positive. End the session on a good note, before any tension arises.",
+            "strategy_zh_tw": "有監督的介紹：在一個中立的區域進行短暫、有監督的互動。用玩具分散牠們的注意力，保持積極的氛圍。在任何緊張氣氛出現前，就結束這次見面。"
+          }
+        ],
+        "source_citations": [16, 222]
+      }
+    ]
+  }
+}

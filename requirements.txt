@@ -2,3 +2,5 @@ flask
 flask-cors
 google-generativeai
 pillow
+faiss-cpu
+sentence-transformers
