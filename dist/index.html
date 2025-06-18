@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cat Whisperer 前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: sans-serif; background: #fff8ec; color: #444; padding: 2rem; text-align: center; }
+    textarea { width: 90%; height: 80px; margin-top: 10px; }
+    img { max-width: 300px; margin: 1rem auto; display: block; }
+  </style>
+</head>
+<body>
+  <h1>🐾 Cat Whisperer 簡易前端</h1>
+  <input type="file" accept="image/*" onchange="previewAndSend(this)" />
+  <img id="preview" />
+  <textarea id="result" readonly>請選擇圖片開始分析</textarea>
+
+  <script>
+    async function previewAndSend(input) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        const base64 = reader.result;
+        document.getElementById('preview').src = base64;
+
+        const res = await fetch("http://localhost:5000/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            image_base64: base64,
+            prompt: "這隻貓目前的情緒是什麼？請用可愛、擬人語氣描述牠的感受，使用繁體中文。"
+          })
+        });
+
+        const data = await res.json();
+        document.getElementById("result").value = data.result || "未收到分析結果";
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+</html>
