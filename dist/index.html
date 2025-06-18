@@ -2,16 +2,16 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>Cat Whisperer - CORS 支援版</title>
+  <title>Cat Whisperer Gemini 版</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-  <h1>🐾 Cat Whisperer 測試版（支援 CORS）</h1>
+  <h1>🐾 Cat Whisperer - Gemini Vision</h1>
   <input type="file" accept="image/*" onchange="handleUpload(this)" />
   <canvas id="canvas" style="display:none;"></canvas>
   <img id="preview" />
   <button onclick="analyze()">開始分析</button>
-  <textarea id="result" readonly>請選擇圖片並按下「開始分析」</textarea>
+  <textarea id="result" readonly>請選擇圖片並分析</textarea>
 
   <script>
     let base64 = "";
@@ -40,18 +40,18 @@
         document.getElementById("result").value = "請先上傳圖片";
         return;
       }
-      document.getElementById("result").value = "分析中...";
+      document.getElementById("result").value = "🐱 Gemini 分析中...";
       try {
-        const res = await fetch("https://cat-whisperer-deploy.onrender.com/analyze", {
+        const res = await fetch("/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             image_base64: base64,
-            prompt: "請翻譯這隻貓現在的心情（繁體中文）"
+            prompt: "這隻貓目前的心情是什麼？請用可愛、擬人語氣描述牠的感受，使用繁體中文。"
           })
         });
         const data = await res.json();
-        document.getElementById("result").value = data.result || "❌ 無法解析回應";
+        document.getElementById("result").value = data.result || "❌ 沒有收到分析結果";
       } catch (e) {
         document.getElementById("result").value = "⚠️ 無法連線到後端，請稍後再試";
       }
