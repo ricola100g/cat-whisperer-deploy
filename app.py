@@ -4,7 +4,7 @@ import openai
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all domains
-openai.api_key = "sk-..."  # Replace with your actual key
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Set API env in the web server
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
