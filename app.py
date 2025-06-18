@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import openai
 
 app = Flask(__name__)
-openai.api_key = "sk-..."  # Replace this with a secure method
+openai.api_key = "sk-..."  # Replace with your secure method
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
