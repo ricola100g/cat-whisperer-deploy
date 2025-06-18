@@ -2,16 +2,17 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>Cat Whisperer 測試版 - Gemini</title>
+  <title>Cat Whisperer Gemini</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-  <h1>🐾 Cat Whisperer - Gemini Vision</h1>
-  <input type="file" accept="image/*" onchange="handleUpload(this)" />
+  <h1>🐾 Cat Whisperer - Gemini Vision 全功能版</h1>
+  <input type="file" accept="image/*" onchange="handleUpload(this); setTimeout(analyze, 500);" />
   <canvas id="canvas" style="display:none;"></canvas>
   <img id="preview" />
-  <button onclick="analyze()">開始分析</button>
-  <textarea id="result" readonly>請選擇圖片並分析</textarea>
+  <textarea id="result" readonly style="width:90%;height:100px;">請上傳貓咪圖片，自動分析中...</textarea>
+  <br/>
+  <button onclick="speakResult()">🔈 播放聲音</button>
 
   <script>
     let base64 = "";
@@ -36,13 +37,10 @@
     }
 
     async function analyze() {
-      if (!base64) {
-        document.getElementById("result").value = "請先上傳圖片";
-        return;
-      }
+      if (!base64) return;
       document.getElementById("result").value = "🐱 Gemini 分析中...";
       try {
-        const res = await fetch("https://cat-whisperer-deploy.onrender.com/analyze", {
+        const res = await fetch("/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -55,6 +53,15 @@
       } catch (e) {
         document.getElementById("result").value = "⚠️ 無法連線到後端，請稍後再試";
       }
+    }
+
+    function speakResult() {
+      const text = document.getElementById("result").value;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "zh-TW";
+      utterance.pitch = 1.2;
+      utterance.rate = 1;
+      speechSynthesis.speak(utterance);
     }
   </script>
 </body>
