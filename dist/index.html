@@ -2,41 +2,59 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>Cat Whisperer 前端</title>
+  <title>Cat Whisperer - CORS 支援版</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { font-family: sans-serif; background: #fff8ec; color: #444; padding: 2rem; text-align: center; }
-    textarea { width: 90%; height: 80px; margin-top: 10px; }
-    img { max-width: 300px; margin: 1rem auto; display: block; }
-  </style>
 </head>
 <body>
-  <h1>🐾 Cat Whisperer 簡易前端</h1>
-  <input type="file" accept="image/*" onchange="previewAndSend(this)" />
+  <h1>🐾 Cat Whisperer 測試版（支援 CORS）</h1>
+  <input type="file" accept="image/*" onchange="handleUpload(this)" />
+  <canvas id="canvas" style="display:none;"></canvas>
   <img id="preview" />
-  <textarea id="result" readonly>請選擇圖片開始分析</textarea>
+  <button onclick="analyze()">開始分析</button>
+  <textarea id="result" readonly>請選擇圖片並按下「開始分析」</textarea>
 
   <script>
-    async function previewAndSend(input) {
+    let base64 = "";
+    function handleUpload(input) {
       const file = input.files[0];
       const reader = new FileReader();
-      reader.onloadend = async () => {
-        const base64 = reader.result;
-        document.getElementById('preview').src = base64;
+      reader.onloadend = () => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.getElementById("canvas");
+          let w = img.width, h = img.height, maxSize = 512;
+          if (w > h && w > maxSize) { h *= maxSize / w; w = maxSize; }
+          else if (h > maxSize) { w *= maxSize / h; h = maxSize; }
+          canvas.width = w; canvas.height = h;
+          canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+          base64 = canvas.toDataURL("image/jpeg", 0.7);
+          document.getElementById("preview").src = base64;
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
 
-        const res = await fetch("http://localhost:5000/analyze", {
+    async function analyze() {
+      if (!base64) {
+        document.getElementById("result").value = "請先上傳圖片";
+        return;
+      }
+      document.getElementById("result").value = "分析中...";
+      try {
+        const res = await fetch("https://cat-whisperer-deploy.onrender.com/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             image_base64: base64,
-            prompt: "這隻貓目前的情緒是什麼？請用可愛、擬人語氣描述牠的感受，使用繁體中文。"
+            prompt: "請翻譯這隻貓現在的心情（繁體中文）"
           })
         });
-
         const data = await res.json();
-        document.getElementById("result").value = data.result || "未收到分析結果";
-      };
-      reader.readAsDataURL(file);
+        document.getElementById("result").value = data.result || "❌ 無法解析回應";
+      } catch (e) {
+        document.getElementById("result").value = "⚠️ 無法連線到後端，請稍後再試";
+      }
     }
   </script>
 </body>

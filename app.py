@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import openai
 
 app = Flask(__name__)
-openai.api_key = "sk-..."  # Replace with your secure method
+CORS(app)  # Enable CORS for all domains
+openai.api_key = "sk-..."  # Replace with your actual key
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
