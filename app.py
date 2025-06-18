@@ -27,13 +27,15 @@ def analyze():
         image_data = base64.b64decode(b64data)
         image = Image.open(BytesIO(image_data)).convert("RGB")
     except Exception as e:
-        return jsonify({"result": "❌ 圖片解析失敗"}), 400
+        return jsonify({"result": f"❌ 圖片處理錯誤：{str(e)}"}), 400
 
     try:
         response = model.generate_content([prompt, image])
         return jsonify({"result": response.text})
     except Exception as e:
-        return jsonify({"result": "❌ Gemini 回應失敗"}), 500
+        import traceback
+        traceback.print_exc()  # log to Render log
+        return jsonify({"result": f"❌ Gemini 回應失敗：{str(e)}"}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
