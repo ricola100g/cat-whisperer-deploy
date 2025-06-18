@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>Cat Whisperer Gemini 版</title>
+  <title>Cat Whisperer 測試版 - Gemini</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
@@ -42,7 +42,7 @@
       }
       document.getElementById("result").value = "🐱 Gemini 分析中...";
       try {
-        const res = await fetch("/analyze", {
+        const res = await fetch("https://cat-whisperer-deploy.onrender.com/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

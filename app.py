@@ -5,19 +5,19 @@ import base64
 from PIL import Image
 from io import BytesIO
 import os
+import traceback
 
 app = Flask(__name__)
 CORS(app)
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
 model = genai.GenerativeModel("gemini-pro-vision")
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
     data = request.json
     image_b64 = data.get("image_base64")
-    prompt = data.get("prompt", "這隻貓現在的心情是什麼？請用可愛語氣描述")
+    prompt = data.get("prompt", "請描述這隻貓的情緒")
 
     if not image_b64:
         return jsonify({"result": "❌ 沒有收到圖片"}), 400
@@ -33,8 +33,7 @@ def analyze():
         response = model.generate_content([prompt, image])
         return jsonify({"result": response.text})
     except Exception as e:
-        import traceback
-        traceback.print_exc()  # log to Render log
+        traceback.print_exc()
         return jsonify({"result": f"❌ Gemini 回應失敗：{str(e)}"}), 500
 
 if __name__ == "__main__":
